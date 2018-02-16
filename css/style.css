@@ -1,0 +1,13 @@
+.jumbotron {
+    background-color: #fac2cc;
+    text-align: center;
+    height: 50%;
+    color: whitesmoke;
+}
+.custom-select{
+    margin: 10px;
+    width: 450px;
+}
+.form-control{
+    width: 450px;
+}
