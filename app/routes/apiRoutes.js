@@ -3,7 +3,8 @@
 // We are linking our routes to a series of "data" sources.
 // ===============================================================================
 
-var resultData = require("../app/public/js/surveyData");
+var resultData = require("../public/js/surveyData");
+console.log("RESULT", resultData)
 // ===============================================================================
 // ROUTING
 // ===============================================================================
@@ -13,7 +14,6 @@ module.exports = function(app) {
   // In each of the below cases when a user visits a link
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
-
   app.get("/api/results", function(req, res) {
     res.json(resultData);
   });
@@ -32,14 +32,14 @@ module.exports = function(app) {
 
     
     // figure out how to match surveyData to user's inputs
-    if (resultData.length < 5) {
-      resultData.push(req.body);
-      res.json(true);
-    }
-    else {
-      resultData.push(req.body);
-      res.json(false);
-    }
+  //   if (resultData.length < 5) {
+  //     resultData.push(req.body);
+  //     res.json(true);
+  //   }
+  //   else {
+  //     resultData.push(req.body);
+  //     res.json(false);
+  //   }
   });
 
 };

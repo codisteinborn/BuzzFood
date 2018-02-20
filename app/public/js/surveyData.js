@@ -28,7 +28,8 @@ var resultData = [{
         3,
         3,
         3
-    ]
+    ],
+    "total": 28,
 },
 {
     "name": "Roasted Chicken & Veggies",
@@ -44,7 +45,8 @@ var resultData = [{
         5,
         1,
         1
-    ]
+    ],
+    "total": 34,
 },
 {
     "name": "Salad",
@@ -60,7 +62,8 @@ var resultData = [{
         5,
         1,
         1
-    ]
+    ],
+    "total": 29,
 },
 {
     "name": "Tacos",
@@ -75,8 +78,9 @@ var resultData = [{
         5,
         2,
         3,
-        3
-    ]
+        2
+    ],
+    "total": 33,
 },
 {
     "name": "Water",
@@ -92,7 +96,8 @@ var resultData = [{
         5,
         1,
         4
-    ]
+    ],
+    "total": 25,
 },
 {
     "name": "Stir-Fry",
@@ -108,19 +113,8 @@ var resultData = [{
         4,
         2,
         3
-    ]
+    ],
+    "total": 35,
 },
 ]
-
-// When user clicks add-btn
-$(".submitBtn").on("click", function(event) {
-    event.preventDefault();
-  
-    // Make a newAns object
-    var newAns = {
-      one: $("#inlineRadio1").val(),
-      two: $("#inlineRadio2").val(),
-    };
-  
-    console.log(newAns);
-});
+module.exports = resultData;
