@@ -26,39 +26,12 @@
         <form>
             <div class="form-group">
                 <label for="FormControlInput1">First Name</label>
-                <input type="name" class="form-control" id="FormControlInput1" placeholder="name">
+                <input type="name" class="form-control" id="FormInput1" placeholder="name">
             </div>
             <div class="form-group">
-                <label for="FormControlInput1">Photo</label>
-                <input type="photo" class="form-control" id="FormControlInput2" placeholder="photo link">
+                <label for="FormControlInput1">Age</label>
+                <input type="photo" class="form-control" id="FormInput2" placeholder="photo link">
             </div>
-            <div class="row q1">
-                Question 1
-            </div>
-            <div class="row">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
-                    <label class="form-check-label" for="inlineRadio1">1</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
-                    <label class="form-check-label" for="inlineRadio2">2</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
-                    <label class="form-check-label" for="inlineRadio3">3</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="4">
-                    <label class="form-check-label" for="inlineRadio3">4</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="5">
-                    <label class="form-check-label" for="inlineRadio3">5</label>
-                </div>
-            </div>
-        </form>
-        <form>
             <div class="row">I have a lot of time to cook.</div>
             <div class="row">
                 <select class="custom-select custom-select-md question1">
@@ -180,7 +153,6 @@
     <div class="foot">
         &copy Codi Steinborn 2018 - GIFs Powered by GIPHY
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -189,6 +161,38 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+        // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+        // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+        // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+        $(".submitBtn").on("click", function (event) {
+            event.preventDefault();
+            // Make a newAns object
+            var newAns = {
+                name: $("#FormInput1").val(),
+                age: $("#FormInput2").val(),
+                one: $(".question1").val(),
+                two: $(".question2").val(),
+                three: $(".question3").val(),
+                four: $(".question4").val(),
+                five: $(".question5").val(),
+                six: $(".question6").val(),
+                seven: $(".question7").val(),
+                eight: $(".question8").val(),
+                nine: $(".question9").val(),
+                ten: $(".question10").val(),
+                number: parseInt($(".question1").val()) + parseInt($(".question2").val()) + parseInt($(".question3").val()) + parseInt($(".question4").val()) + parseInt($(".question5").val()) + parseInt($(".question6").val()) + parseInt($(".question7").val()) + parseInt($(".question8").val()) + parseInt($(".question9").val()) + parseInt($(".question10").val())
+            };
+            console.log(newAns);
+        });
+        $.post("/api/results", newAns,
+            function (data) {
+            });
+
+    </script>
 </body>
 
 </html>
