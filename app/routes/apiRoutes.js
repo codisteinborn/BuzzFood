@@ -8,14 +8,15 @@ console.log("RESULT", resultData)
 // ===============================================================================
 // ROUTING
 // ===============================================================================
-module.exports = function(app) {
+module.exports = function (app) {
   // API GET Requests
   // Below code handles when users "visit" a page.
   // In each of the below cases when a user visits a link
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
-  app.get("/api/results", function(req, res) {
+  app.get("/api/results", function (req, res) {
     res.json(resultData);
+
   });
 
   // API POST Requests
@@ -25,21 +26,29 @@ module.exports = function(app) {
   // (ex. User fills out a reservation request... this data is then sent to the server...
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
-  app.post("/api/results", function(req, res) {
+  app.post("/api/results", function (req, res) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
 
-    
-    // figure out how to match surveyData to user's inputs
-  //   if (resultData.length < 5) {
-  //     resultData.push(req.body);
-  //     res.json(true);
-  //   }
-  //   else {
-  //     resultData.push(req.body);
-  //     res.json(false);
-  //   }
-  });
 
+    // figure out how to match surveyData to user's inputs
+    for (var i = 0; resultData.length; i++) {
+      if (resultData[i].total == newAns.total) {
+        resultData.push(req.body);
+        res.json(true);
+      }
+      else {
+        resultData.push(req.body);
+        res.json(false);
+      }
+    }
+  });
+  app.post("/api/clear", function () {
+    // Empty out the arrays of data
+    tableData = [];
+    waitListData = [];
+
+    console.log(tableData);
+  });
 };

@@ -12,15 +12,34 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <title>Quiz</title>
+
+    <style>
+        .jumbotron {
+            background-color: #fac2cc;
+            text-align: center;
+            height: 50%;
+            color: whitesmoke;
+        }
+        .custom-select {
+            margin: 10px;
+            width: 450px;
+        }
+        .form-control {
+            width: 450px;
+        }
+        .foot{
+            bottom:0;
+            height: 20px;
+            color: rgb(41, 41, 41);
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>Take the quiz below to find out what you shouuld eat for dinner. </p>
-        <p>
-
-        </p>
+            <h1>Hello hungry humans!</h1>
+            <p>Answer a couple questions to find out what you should have for dinner tonight.</p>
     </div>
     <div class="container">
         <form>
@@ -146,7 +165,10 @@
         </form>
 
         <div class="row">
-            <a href="*">Click to Retun to Home</a>
+            <a href="*">Retun to Home</a>
+        </div>
+        <div class="row">
+            <a href="https://github.com/codisteinborn/BuzzfeedQuiz">Check this project out on GitHub</a>
         </div>
     </div>
 
@@ -184,13 +206,24 @@
                 eight: $(".question8").val(),
                 nine: $(".question9").val(),
                 ten: $(".question10").val(),
-                number: parseInt($(".question1").val()) + parseInt($(".question2").val()) + parseInt($(".question3").val()) + parseInt($(".question4").val()) + parseInt($(".question5").val()) + parseInt($(".question6").val()) + parseInt($(".question7").val()) + parseInt($(".question8").val()) + parseInt($(".question9").val()) + parseInt($(".question10").val())
+                total: parseInt($(".question1").val()) + parseInt($(".question2").val()) + parseInt($(".question3").val()) + parseInt($(".question4").val()) + parseInt($(".question5").val()) + parseInt($(".question6").val()) + parseInt($(".question7").val()) + parseInt($(".question8").val()) + parseInt($(".question9").val()) + parseInt($(".question10").val())
             };
             console.log(newAns);
+            console.log(newAns.total);
         });
         $.post("/api/results", newAns,
-            function (data) {
-            });
+        function(data) {
+          // If a table is available... tell user they are booked.
+          if (data) {
+            alert("pasta");
+            console.log("pasta")
+          }
+          // If a table is available... tell user they on the waiting list.
+          else {
+            alert("water");
+            console.log("water")
+          }
+        });
 
     </script>
 </body>
