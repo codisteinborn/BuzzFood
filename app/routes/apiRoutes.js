@@ -35,22 +35,17 @@ module.exports = function (app) {
     var absVal2 = 0;
     var absVal3 = 0;
     var absVal4 = 0;
-    var absVal5 = 0;
-    var absVal6 = 0;
 
     for (var i = 0; i < scoreNums.length; i++) {
       absVal0 += Math.abs(resultData[0].scores[i] - scoreNums[i]);
-      console.log("0", absVal0);
       absVal1 += Math.abs(resultData[1].scores[i] - scoreNums[i]);
-      console.log("1", absVal1);
       absVal2 += Math.abs(resultData[2].scores[i] - scoreNums[i]);
-      console.log("2", absVal2);
       absVal3 += Math.abs(resultData[3].scores[i] - scoreNums[i]);
       absVal4 += Math.abs(resultData[4].scores[i] - scoreNums[i]);
     }
 
     var newFood;
-    var match = Math.min(absVal0, absVal1, absVal2, absVal3, absVal4, absVal5, absVal6);
+    var match = Math.min(absVal0, absVal1, absVal2, absVal3, absVal4);
     console.log("match", match);
     if (match == absVal0) {
       newFood = resultData[0]
@@ -66,12 +61,6 @@ module.exports = function (app) {
     }
     else if (match == absVal4) {
       newFood = resultData[4]
-    }
-    else if (match == absVal5) {
-      newFood = resultData[5]
-    }
-    else if (match == absVal6) {
-      newFood = resultData[6]
     }
     res.json(newFood);
   });
