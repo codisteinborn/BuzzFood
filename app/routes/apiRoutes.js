@@ -2,21 +2,16 @@
 // LOAD DATA
 // We are linking our routes to a series of "data" sources.
 // ===============================================================================
-
+var path = require("path");
 var resultData = require("../public/js/surveyData");
-console.log("RESULT", resultData)
 // ===============================================================================
 // ROUTING
 // ===============================================================================
 module.exports = function (app) {
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
+
   // ---------------------------------------------------------------------------
   app.get("/api/results", function (req, res) {
     res.json(resultData);
-
   });
 
   // API POST Requests
@@ -31,24 +26,54 @@ module.exports = function (app) {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
 
+    var userScores = JSON.parse(req.body.scores)
+    var scoreNums = userScores.map(function (i) {
+      return parseInt(i, 10);
+    });
+    var absVal0 = 0;
+    var absVal1 = 0;
+    var absVal2 = 0;
+    var absVal3 = 0;
+    var absVal4 = 0;
+    var absVal5 = 0;
+    var absVal6 = 0;
 
-    // figure out how to match surveyData to user's inputs
-    for (var i = 0; resultData.length; i++) {
-      if (resultData[i].total == newAns.total) {
-        resultData.push(req.body);
-        res.json(true);
-      }
-      else {
-        resultData.push(req.body);
-        res.json(false);
-      }
+    for (var i = 0; i < scoreNums.lenth; i++) {
+      absVal0 += Math.abs(resultData[0].scores[i] - scoreNums[i]);
+      absVal1 += Math.abs(resultData[1].scores[i] - scoreNums[i]);
+      absVal2 += Math.abs(resultData[2].scores[i] - scoreNums[i]);
+      absVal3 += Math.abs(resultData[3].scores[i] - scoreNums[i]);
+      absVal4 += Math.abs(resultData[4].scores[i] - scoreNums[i]);
+      absVal5 += Math.abs(resultData[5].scores[i] - scoreNums[i]);
+      absVal6 += Math.abs(resultData[6].scores[i] - scoreNums[i]);
     }
+
+    var newFood;
+    var match = Math.min(absVal0, absVal1, absVal2, absVal3, absVal4, absVal5, absVal6)
+    if (match == absVal0) {
+      newFood = resultData[0]
+    }
+    else if (match == absVal1) {
+      newFood = resultData[1]
+    }
+    else if (match == absVal2) {
+      newFood = resultData[2]
+    }
+    else if (match == absVal3) {
+      newFood = resultData[3]
+    }
+    else if (match == absVal4) {
+      newFood = resultData[4]
+    }
+    else if (match == absVal5) {
+      newFood = resultData[5]
+    }
+    else if (match == absVal6) {
+      newFood = resultData[6]
+    }
+    res.json(newFood);
   });
   app.post("/api/clear", function () {
-    // Empty out the arrays of data
-    tableData = [];
-    waitListData = [];
-
-    console.log(tableData);
+    res.destroy({});
   });
 };

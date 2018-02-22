@@ -9,8 +9,14 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
+    <script type="text/javascript" src="js/userData.js"></script>
     <title>Quiz</title>
 
     <style>
@@ -20,15 +26,18 @@
             height: 50%;
             color: whitesmoke;
         }
+
         .custom-select {
             margin: 10px;
             width: 450px;
         }
+
         .form-control {
             width: 450px;
         }
-        .foot{
-            bottom:0;
+
+        .foot {
+            bottom: 0;
             height: 20px;
             color: rgb(41, 41, 41);
             text-align: center;
@@ -38,8 +47,8 @@
 
 <body>
     <div class="jumbotron">
-            <h1>Hello hungry humans!</h1>
-            <p>Answer a couple questions to find out what you should have for dinner tonight.</p>
+        <h1>Hello hungry humans!</h1>
+        <p>Answer a couple questions to find out what you should have for dinner tonight.</p>
     </div>
     <div class="container">
         <form>
@@ -175,14 +184,7 @@
     <div class="foot">
         &copy Codi Steinborn 2018 - GIFs Powered by GIPHY
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script type="text/javascript">
 
         // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
@@ -192,39 +194,46 @@
 
         $(".submitBtn").on("click", function (event) {
             event.preventDefault();
-            // Make a newAns object
-            var newAns = {
+            var newAns = [
+                $(".question1").val(),
+                $(".question2").val(),
+                $(".question3").val(),
+                $(".question4").val(),
+                $(".question5").val(),
+                $(".question6").val(),
+                $(".question7").val(),
+                $(".question8").val(),
+                $(".question9").val(),
+                $(".question10").val(),
+            ];
+            var userScores = JSON.stringify(newAns);
+            var userRes = {
                 name: $("#FormInput1").val(),
                 age: $("#FormInput2").val(),
-                one: $(".question1").val(),
-                two: $(".question2").val(),
-                three: $(".question3").val(),
-                four: $(".question4").val(),
-                five: $(".question5").val(),
-                six: $(".question6").val(),
-                seven: $(".question7").val(),
-                eight: $(".question8").val(),
-                nine: $(".question9").val(),
-                ten: $(".question10").val(),
-                total: parseInt($(".question1").val()) + parseInt($(".question2").val()) + parseInt($(".question3").val()) + parseInt($(".question4").val()) + parseInt($(".question5").val()) + parseInt($(".question6").val()) + parseInt($(".question7").val()) + parseInt($(".question8").val()) + parseInt($(".question9").val()) + parseInt($(".question10").val())
-            };
-            console.log(newAns);
-            console.log(newAns.total);
-        });
-        $.post("/api/results", newAns,
-        function(data) {
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("pasta");
-            console.log("pasta")
-          }
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("water");
-            console.log("water")
-          }
-        });
+                scores: userScores
+            }
+            // console.log(userRes);
 
+            $.post("/api/results", userRes)
+                .then(function (data) {
+                   console.log("data",data);
+                   console.log("userRes",userRes);
+
+                    // Clear the form when submitting
+                    // $("#FormInput1").val(""),
+                    // $("#FormInput2").val(""),
+                    // $(".question1").val(""),
+                    // $(".question2").val(""),
+                    // $(".question3").val(""),
+                    // $(".question4").val(""),
+                    // $(".question5").val(""),
+                    // $(".question6").val(""),
+                    // $(".question7").val(""),
+                    // $(".question8").val(""),
+                    // $(".question9").val(""),
+                    // $(".question10").val("")
+        });
+    });
     </script>
 </body>
 
