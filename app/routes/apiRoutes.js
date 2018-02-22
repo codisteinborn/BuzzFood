@@ -39,16 +39,14 @@ module.exports = function (app) {
     var absVal6 = 0;
 
     for (var i = 0; i < scoreNums.length; i++) {
-      absVal0 = Math.abs(resultData[0].scores[i] - scoreNums[i]);
+      absVal0 += Math.abs(resultData[0].scores[i] - scoreNums[i]);
       console.log("0", absVal0);
-      absVal1 = Math.abs(resultData[1].scores[i] - scoreNums[i]);
+      absVal1 += Math.abs(resultData[1].scores[i] - scoreNums[i]);
       console.log("1", absVal1);
       absVal2 += Math.abs(resultData[2].scores[i] - scoreNums[i]);
       console.log("2", absVal2);
       absVal3 += Math.abs(resultData[3].scores[i] - scoreNums[i]);
       absVal4 += Math.abs(resultData[4].scores[i] - scoreNums[i]);
-      absVal5 += Math.abs(resultData[5].scores[i] - scoreNums[i]);
-      absVal6 += Math.abs(resultData[6].scores[i] - scoreNums[i]);
     }
 
     var newFood;
