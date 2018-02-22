@@ -1,6 +1,6 @@
 var resultData = [{
-    name: "Pizza",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name: "PIZZA",
+    photo: "https://media.giphy.com/media/1108D2tVaUN3eo/giphy.gif",
     scores: [
         2,
         1,
@@ -15,8 +15,8 @@ var resultData = [{
     ],
 },
 {
-    name: "Pasta",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name: "PASTA",
+    photo: "https://media.giphy.com/media/gzE15pfW1jxkI/giphy.gif",
     scores: [
         4,
         2,
@@ -31,8 +31,8 @@ var resultData = [{
     ],
 },
 {
-    name: "Salad",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name: "SALAD",
+    photo: "https://media.giphy.com/media/149sixr2mzlBrq/giphy.gif",
     scores: [
         3,
         4,
@@ -47,8 +47,8 @@ var resultData = [{
     ],
 },
 {
-    name: "Tacos",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name: "TACOS",
+    photo: "https://media.giphy.com/media/l3vR3rAj5IAJyDQRi/giphy.gif",
     scores: [
         5,
         3,
@@ -63,8 +63,8 @@ var resultData = [{
     ],
 },
 {
-    name: "Water",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name: "WATER",
+    photo: "https://media.giphy.com/media/bDL3BsB4ViI2k/giphy.gif",
     scores: [
         1,
         5,
