@@ -14,13 +14,13 @@ Application Link - <https://codisteinborn.github.io/BuzzFood/>
 
 Instructions -
 Upon opening the application, you will be brought to the Home Page. Here you will click on the "Take Quiz Now!" button and be directed to the Quiz Page.
-![Home Page](css/HomePage.png)
+![Home Page](app/public/css/HomePage.png)
 
 Now that you are on the Quiz Page, you will fill out the form by first entering your name and then answering all 10 of the survey questions by rating them on a scale of 1(Strongly Disagree) to 5(Strongly Agree). Finally, click the"Submit" button to see your results.
-![Quiz Page](css/QuizPage.png)
+![Quiz Page](app/public/css/QuizPage.png)
 
 Once you have submitted your results, you will see a modal appear with what you should have for dinner! If you have missed any of the questions in the survey, you will receive a notification to go back and finish answering all of the questions before submitting again.
-![Results Page](css/ResultPage.png)
+![Results Page](app/public/css/ResultPage.png)
 
 # Built Utilizing:
 

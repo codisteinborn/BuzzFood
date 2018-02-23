@@ -1,0 +1,91 @@
+.jumbotron {
+    background-color: #f3344c;
+    text-align: center;
+    height: 50%;
+    color: whitesmoke;
+    font-family: 'Istok Web', sans-serif;
+}
+
+.surveyBtn {
+    background-color: whitesmoke;
+    color: #f3344c;
+    font-size: 30px;
+}
+
+.foot {
+    bottom: 0;
+    height: 20px;
+    color: rgb(41, 41, 41);
+    text-align: center;
+}
+
+.giphs {
+    top: 0;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.containter {
+    font-family: 'Heebo', sans-serif;
+    text-align: center;
+}
+
+.custom-select {
+    margin: 10px;
+    width: 450px;
+}
+
+.form-control {
+    width: 450px;
+}
+
+.modal {
+    font-family: 'Istok Web', sans-serif;
+}
+
+.modalGif {
+    height: 350px;
+    width: 300px;
+    margin-left: 31%;
+}
+
+.row {
+    margin: 5px;
+    font-weight: bold;
+}
+
+.modal-content {
+    height: 500px;
+    font-size: 20px;
+    color: #f3344c;
+    text-align: center;
+}
+#userNameid {
+text-align: center;
+}
+.modal-title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #017bff;
+    margin-bottom: 5px;
+}
+
+.modal-header {
+    border-style: none;
+}
+
+.submitBtn {
+    font-size: 20px;
+    color: white;
+}
+
+.btn {
+    background-color: #017bff;
+}
+
+.navBtn {
+    margin: 5px;
+}

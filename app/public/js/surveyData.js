@@ -30,7 +30,7 @@ var resultData = [{
         4,
         3
     ],
-    desc: "You're hungry and need a substantial carbo-load. So boil up some noodles and toss with whatever sauce/mix-ins you're craving. PasTA-DA"
+    desc: "You're hungry and need a substantial carbo-load. So boil up some noodles and toss them with whatever sauce/mix-ins you're craving. PasTA-DA"
 },
 {
     name: "SALAD",
