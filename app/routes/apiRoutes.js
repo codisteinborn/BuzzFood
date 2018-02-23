@@ -62,6 +62,9 @@ module.exports = function (app) {
     else if (match == absVal4) {
       newFood = resultData[4]
     }
+    else {
+      newFood = resultData[5]
+    }
     res.json(newFood);
   });
   app.post("/api/clear", function () {

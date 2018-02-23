@@ -15,15 +15,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>BUZZFOOD</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Istok+Web|Montserrat:900" rel="stylesheet">
+    <title>BuzzFood</title>
 
     <style>
         .jumbotron {
-            background-color: #fac2cc;
+            background-color: #f3344c;
             text-align: center;
             height: 50%;
             color: whitesmoke;
+            font-family: 'Istok Web', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .containter {
+            font-family: 'Heebo', sans-serif;
+            text-align: center;
         }
 
         .custom-select {
@@ -41,165 +51,206 @@
             color: rgb(41, 41, 41);
             text-align: center;
         }
-        .modalGif{
-            height:350px;
-            width:auto;
+
+        .modal {
+            font-family: 'Istok Web', sans-serif;
         }
-        .modal-content{
+
+        .modalGif {
+            height: 350px;
+            width: auto;
+        }
+
+        .modal-content {
             height: 500px;
             font-size: 20px;
+            margin: 10px;
+            color: #f3344c;
+        }
+
+        .modal-body {
             text-align: center;
+        }
+
+        .modal-title {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .submitBtn {
+            font-size: 20px;
+            color: white;
+        }
+
+        .navBtn {
+            margin: 5px;
         }
     </style>
 </head>
 
 <body>
     <!-- modal -->
-        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Dinner is served</h5>
-                    </div>
-                    <div class="modal-body">
-                      <div id="userNameid"></div>
-                      <div id="modal-gif"></div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
-                    </div>
-                  </div>
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
                 </div>
-              </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div id="userNameid"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-5 col-lg-5" id="modal-gif"></div>
+                        <div class="col-sm-5 col-md-7 col-lg-7" id="modalFoodid"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="jumbotron">
         <h1>Hello hungry humans!</h1>
         <p>Answer a couple questions to find out what you should have for dinner tonight.</p>
     </div>
+
     <div class="container">
         <form>
             <div class="form-group">
                 <label for="FormControlInput1">Name</label>
                 <input type="name" class="form-control" id="FormInput1" placeholder="name">
-            </div>
-            <div class="row">I have a lot of time to cook.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question1">
-                    <option selected>Question 1</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">I would like to make something healthy.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question2">
-                    <option selected>Question 2</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">I love grease.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question3">
-                    <option selected>Question 3</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">I am a good cook.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question4">
-                    <option selected>Question 4</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">I am starving.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question5">
-                    <option selected>Question 5</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">I crave green foods.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question6">
-                    <option selected>Question 6</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">The more ingredients the better.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question7">
-                    <option selected>Question 7</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">I'm on a diet.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question8">
-                    <option selected>Question 8</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">Today is a CHEAT DAY.</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question9">
-                    <option selected>Question 9</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <div class="row">I'm leaning towards ordering in now...</div>
-            <div class="row">
-                <select class="custom-select custom-select-md question10">
-                    <option selected>Question 10</option>
-                    <option value="1">One - Strongly Disagree</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three - Neither Agree nor Disagree</option>
-                    <option value="4">Four</option>
-                    <option value="5">Five - Strongly Agree</option>
-                </select>
-            </div>
-            <a class="btn btn-primary btn-lg submitBtn" role="button" data-toggle="modal" data-target="#exampleModal">Submit</a>
-        </form>
 
-        <div class="row">
-            <a href="*">Retun to Home</a>
-        </div>
-        <div class="row">
-            <a href="https://github.com/codisteinborn/BuzzfeedQuiz">Check this project out on GitHub</a>
+                <div class="row">I have a lot of time to cook.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question1">
+                        <option selected>Question 1</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">I would like to make something healthy.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question2">
+                        <option selected>Question 2</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">I love grease.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question3">
+                        <option selected>Question 3</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">I am a good cook.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question4">
+                        <option selected>Question 4</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">I am starving.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question5">
+                        <option selected>Question 5</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">I crave green foods.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question6">
+                        <option selected>Question 6</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">The more ingredients the better.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question7">
+                        <option selected>Question 7</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">I'm on a diet.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question8">
+                        <option selected>Question 8</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">Today is a CHEAT DAY.</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question9">
+                        <option selected>Question 9</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+                <div class="row">I'm leaning towards ordering in now...</div>
+                <div class="row">
+                    <select class="custom-select custom-select-md question10">
+                        <option selected>Question 10</option>
+                        <option value="1">One - Strongly Disagree</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three - Neither Agree nor Disagree</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five - Strongly Agree</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <a class="btn btn-primary btn-lg submitBtn" role="button" data-toggle="modal" data-target="#exampleModal">Submit</a>
+        <br>
+
+        <div>
+            <button class="navBtn">
+                <a href="*">Retun to Home</a>
+            </button>
+
+            <button class="navBtn">
+                <a href="https://github.com/codisteinborn/BuzzFood">Check this project out on GitHub</a>
+            </button>
+
+            <button class="navBtn">
+                <a href="/api/results">API Results</a>
+            </button>
         </div>
     </div>
 
@@ -237,27 +288,34 @@
 
             $.post("/api/results", userRes)
                 .then(function (data) {
-                   console.log("data",data);
-                   console.log("userRes",userRes);
+                    console.log("data", data);
+                    console.log("userRes", userRes);
                     var gifLink = data.photo;
-                   $("#userNameid").text(userRes.name + ", you should have " + data.name + " tonight!");
-                   $("#modal-gif").html("<iframe class='modalGif' src='"+ gifLink + "'</iframe>");
-
-                    // Clear the form when submitting
-                    $("#FormInput1").val(""),
-                    $("#FormInput2").val(""),
-                    $(".question1").val(""),
-                    $(".question2").val(""),
-                    $(".question3").val(""),
-                    $(".question4").val(""),
-                    $(".question5").val(""),
-                    $(".question6").val(""),
-                    $(".question7").val(""),
-                    $(".question8").val(""),
-                    $(".question9").val(""),
-                    $(".question10").val("")
+                    if (userRes.scores > 0) {
+                        $(".modal-title").text("Dinner is served!");
+                        $("#userNameid").text(userRes.name + ", you should have " + data.name + " tonight!");
+                        $("#modal-gif").html("<iframe class='modalGif' src='" + gifLink + "'</iframe>");
+                        $("#modalFoodid").text(data.desc);
+                        $("#FormInput1").val(""),
+                            $(".question1").val(""),
+                            $(".question2").val(""),
+                            $(".question3").val(""),
+                            $(".question4").val(""),
+                            $(".question5").val(""),
+                            $(".question6").val(""),
+                            $(".question7").val(""),
+                            $(".question8").val(""),
+                            $(".question9").val(""),
+                            $(".question10").val("")
+                    }
+                    else {
+                        $(".modal-title").text("Dinner is (not) served!");
+                        $("#userNameid").text("");
+                        $("#modal-gif").html("<iframe class='modalGif' src='" + gifLink + "'</iframe>");
+                        $("#modalFoodid").text(data.desc);
+                    }
+                });
         });
-    });
     </script>
 </body>
 
