@@ -13,6 +13,7 @@ var resultData = [{
         5,
         5
     ],
+    desc: "You're STARVING and DGAF about that diet you said you were going to start yesterday... Throw a pizza in the oven (or order one if you're feeling ambitious)."
 },
 {
     name: "PASTA",
@@ -29,6 +30,7 @@ var resultData = [{
         4,
         3
     ],
+    desc: "You're hungry and need a substantial carbo-load. Boil up some noodles and toss with whatever sauce/mix-ins you're craving."
 },
 {
     name: "SALAD",
@@ -45,6 +47,7 @@ var resultData = [{
         2,
         2
     ],
+    desc: "You're feeling healthy and don't want to ruin that spin class you took this morning. Grab some lettuce and throw in whatever toppings you've got in your fridge."
 },
 {
     name: "TACOS",
@@ -61,6 +64,7 @@ var resultData = [{
         3,
         1
     ],
+    desc: "You're in the mood to strut your stuff in the kitchen, so whip yourself up a fiesta feast. Taco-bout a delicious dinner!"
 },
 {
     name: "WATER",
@@ -77,6 +81,11 @@ var resultData = [{
         1,
         4
     ],
+    desc: "Pour yourself a big glass of water because clearly you're not hungry."
 },
+{
+    photo: "https://media.giphy.com/media/13ywPzPJdfhmBG/giphy.gif",
+    desc: "Oops, looks like you missed a question. Please fill out all questions before submitting."
+}
 ]
 module.exports = resultData;
