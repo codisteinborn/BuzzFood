@@ -1,7 +1,7 @@
 {
-  "name": "buzzfeedquiz",
+  "name": "buzzfood",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a quiz users can take to find out what they should have for dinner.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
