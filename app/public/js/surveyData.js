@@ -30,7 +30,7 @@ var resultData = [{
         4,
         3
     ],
-    desc: "You're hungry and need a substantial carbo-load. Boil up some noodles and toss with whatever sauce/mix-ins you're craving. PasTA-DA"
+    desc: "You're hungry and need a substantial carbo-load. So boil up some noodles and toss with whatever sauce/mix-ins you're craving. PasTA-DA"
 },
 {
     name: "SALAD",
@@ -47,7 +47,7 @@ var resultData = [{
         2,
         2
     ],
-    desc: "You're feeling healthy and don't want to ruin that spin class you took this morning. Grab some lettuce and throw in whatever toppings you've got in your fridge. Lettuce know how it is!"
+    desc: "You're feeling healthy and don't want to ruin that spin class you took this morning. Grab some lettuce and throw in whatever toppings you've got in your fridge. Lettuce know how your salad is!"
 },
 {
     name: "TACOS",
@@ -85,7 +85,7 @@ var resultData = [{
 },
 {
     photo: "https://media.giphy.com/media/13ywPzPJdfhmBG/giphy.gif",
-    desc: "Oops, looks like you missed a question. Please fill out all questions before submitting."
+    desc: "Oops, it looks like you missed a question. Please fill out all questions before submitting."
 }
 ]
 module.exports = resultData;
