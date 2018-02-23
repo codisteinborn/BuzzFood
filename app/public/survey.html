@@ -58,30 +58,39 @@
 
         .modalGif {
             height: 350px;
-            width: auto;
+            width: 300px;
+            margin-left: 31%;
+        }
+
+        .row {
+            margin: 5px;
+            font-weight: bold;
         }
 
         .modal-content {
             height: 500px;
             font-size: 20px;
-            margin: 10px;
             color: #f3344c;
-        }
-
-        .modal-body {
             text-align: center;
         }
 
         .modal-title {
             font-size: 30px;
             text-align: center;
+            font-weight: bold;
+            color: #017bff;
+        }
+        .modal-header{
+            border-style: none;
         }
 
         .submitBtn {
             font-size: 20px;
             color: white;
         }
-
+.btn{
+    background-color: #017bff;
+}
         .navBtn {
             margin: 5px;
         }
@@ -95,16 +104,14 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Dinner is served!</h5>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div id="userNameid"></div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-5 col-lg-5" id="modal-gif"></div>
-                        <div class="col-sm-5 col-md-7 col-lg-7" id="modalFoodid"></div>
-                    </div>
+                    <div class="row" id="modalFoodid"></div>
+                    <div class="row" id="modal-gif"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
@@ -115,15 +122,19 @@
 
     <div class="jumbotron">
         <h1>Hello hungry humans!</h1>
-        <p>Answer a couple questions to find out what you should have for dinner tonight.</p>
+        <p>Answer a couple questions to find out what you should have for dinner tonight</p>
+        <p><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></p>
     </div>
 
     <div class="container">
         <form>
             <div class="form-group">
-                <label for="FormControlInput1">Name</label>
-                <input type="name" class="form-control" id="FormInput1" placeholder="name">
-
+                <div class="row">
+                    <label for="FormControlInput1">Name</label>
+                </div>
+                <div class="row">
+                    <input type="name" class="form-control" id="FormInput1" placeholder="name">
+                </div>
                 <div class="row">I have a lot of time to cook.</div>
                 <div class="row">
                     <select class="custom-select custom-select-md question1">
@@ -236,7 +247,7 @@
                 </div>
             </div>
         </form>
-        <a class="btn btn-primary btn-lg submitBtn" role="button" data-toggle="modal" data-target="#exampleModal">Submit</a>
+        <a class="btn btn-primary btn-lg submitBtn" role="button" data-toggle="modal" data-target="#exampleModal">Subm<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></a>
         <br>
 
         <div>
@@ -292,10 +303,11 @@
                     console.log("userRes", userRes);
                     var gifLink = data.photo;
                     if (userRes.scores > 0) {
-                        $(".modal-title").text("Dinner is served!");
+                        // $(".modal-title").text("Dinner is served!");
                         $("#userNameid").text(userRes.name + ", you should have " + data.name + " tonight!");
                         $("#modal-gif").html("<iframe class='modalGif' src='" + gifLink + "'</iframe>");
                         $("#modalFoodid").text(data.desc);
+
                         $("#FormInput1").val(""),
                             $(".question1").val(""),
                             $(".question2").val(""),
@@ -309,7 +321,7 @@
                             $(".question10").val("")
                     }
                     else {
-                        $(".modal-title").text("Dinner is (not) served!");
+                        // $(".modal-title").text("Dinner is (not) served!");
                         $("#userNameid").text("");
                         $("#modal-gif").html("<iframe class='modalGif' src='" + gifLink + "'</iframe>");
                         $("#modalFoodid").text(data.desc);

@@ -13,7 +13,7 @@ var resultData = [{
         5,
         5
     ],
-    desc: "You're STARVING and DGAF about that diet you said you were going to start yesterday... Throw a pizza in the oven (or order one if you're feeling ambitious)."
+    desc: "You're STARVING and DGAF about that diet you said you were going to start yesterday... Throw a pizza in the oven (or order one if you're feeling ambitious). Pizza-cake!"
 },
 {
     name: "PASTA",
@@ -30,7 +30,7 @@ var resultData = [{
         4,
         3
     ],
-    desc: "You're hungry and need a substantial carbo-load. Boil up some noodles and toss with whatever sauce/mix-ins you're craving."
+    desc: "You're hungry and need a substantial carbo-load. Boil up some noodles and toss with whatever sauce/mix-ins you're craving. PasTA-DA"
 },
 {
     name: "SALAD",
@@ -47,7 +47,7 @@ var resultData = [{
         2,
         2
     ],
-    desc: "You're feeling healthy and don't want to ruin that spin class you took this morning. Grab some lettuce and throw in whatever toppings you've got in your fridge."
+    desc: "You're feeling healthy and don't want to ruin that spin class you took this morning. Grab some lettuce and throw in whatever toppings you've got in your fridge. Lettuce know how it is!"
 },
 {
     name: "TACOS",
@@ -64,7 +64,7 @@ var resultData = [{
         3,
         1
     ],
-    desc: "You're in the mood to strut your stuff in the kitchen, so whip yourself up a fiesta feast. Taco-bout a delicious dinner!"
+    desc: "You're in the mood to strut your stuff in the kitchen, so whip yourself up a fiesta feast. Taco-bout a tasty dinner!"
 },
 {
     name: "WATER",
@@ -81,7 +81,7 @@ var resultData = [{
         1,
         4
     ],
-    desc: "Pour yourself a big glass of water because clearly you're not hungry."
+    desc: "Pour yourself a big glass of water because clearly you're not hungry. Water you taking this quiz for??"
 },
 {
     photo: "https://media.giphy.com/media/13ywPzPJdfhmBG/giphy.gif",
