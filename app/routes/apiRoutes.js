@@ -18,6 +18,7 @@ module.exports = function (app) {
 
   app.post("/api/results", function (req, res) {
     var userScores = JSON.parse(req.body.scores)
+    var scoreNums = [];
     var scoreNums = userScores.map(function (i) {
       return parseInt(i, 10);
     });
