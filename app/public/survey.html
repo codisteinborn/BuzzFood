@@ -70,14 +70,16 @@
         }
 
         .modal-content {
-            height: 500px;
+            /* height: 500px; */
             font-size: 20px;
             color: #f3344c;
             text-align: center;
         }
-#userNameid {
-    text-align: center;
-}
+
+        #userNameid {
+            text-align: center;
+        }
+
         .modal-title {
             font-size: 30px;
             text-align: center;
@@ -86,7 +88,7 @@
             margin-bottom: 5px;
         }
 
-        .modal-header {
+        .modal-header .modal-footer {
             border-style: none;
         }
 
@@ -111,18 +113,18 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                </div>
                 <div class="modal-body">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    </div>
                     <!-- <div class="row">
                         <div id="userNameid"></div>
                     </div> -->
                     <div class="row" id="modalFoodid"></div>
                     <div class="row" id="modal-gif"></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+                    <div class="row modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,9 +279,9 @@
     </div>
 
     <script type="text/javascript">
-/**
- * This on-click function takes the user's responses and stores them in an object which it posts and then uses the information to dynamically update the result modal
- */ 
+        /**
+         * This on-click function takes the user's responses and stores them in an object which it posts and then uses the information to dynamically update the result modal
+         */
         $(".submitBtn").on("click", function (event) {
             event.preventDefault();
             var newAns = [
@@ -299,7 +301,7 @@
                 name: $("#FormInput1").val(),
                 scores: userScores
             }
-            console.log(userScores);
+            // console.log(userScores);
             $.post("/api/results", userRes)
                 .then(function (data) {
                     var gifLink = data.photo;
