@@ -10,7 +10,7 @@ I wanted to replicate a BuzzFeed-like quiz for users to fill out and get matched
 
 # Users Guide:
 
-Application Link - <https://codisteinborn.github.io/BuzzFood/>
+Application Link - <https://buzzfoodapp.herokuapp.com/>
 
 Instructions -
 Upon opening the application, you will be brought to the Home Page. Here you will click on the "Take Quiz Now!" button and be directed to the Quiz Page.
